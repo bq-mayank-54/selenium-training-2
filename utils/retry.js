@@ -7,7 +7,7 @@ export async function retry(fn, retries = 3, delay = 1000, description = '') {
         if (attempt === retries) {
           throw new Error(`Final retry failed (${description}): ${err.message}`);
         }
-        console.warn(`Retry ${attempt} for ${description}: ${err.message}`);
+        // console.warn(`Retry ${attempt} for ${description}: ${err.message}`);
         await new Promise(res => setTimeout(res, delay));
       }
     }
