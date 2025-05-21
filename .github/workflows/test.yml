@@ -2,9 +2,9 @@ name: Run E2E Tests and Publish Report
 
 on:
   push:
-    branches: [ main ]
+    branches: [ day3 ]
   pull_request:
-    branches: [ main ]
+    branches: [ day3 ]
 
 jobs:
   test:
