@@ -21,6 +21,14 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install
 
+      - name: 🔧 Install ChromeDriver Matching Chrome
+        run: |
+          npm install chromedriver@latest chromedriver-autoinstaller
+
+      - name: 🔁 Auto Match ChromeDriver to Chrome
+        run: |
+          node -e "require('chromedriver-autoinstaller').install();"
+
       - name: 🧪 Run Mocha Tests Headlessly
         run: |
           mkdir -p artifacts
