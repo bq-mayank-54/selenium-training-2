@@ -10,24 +10,24 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: 📥 Checkout Repository
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
-      - name: 🧰 Setup Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v3
         with:
           node-version: '18'
 
-      - name: 📦 Install Dependencies
+      - name: Install Dependencies
         run: npm install
 
       - name: 🔧 Install chromedriver
         run: npm install chromedriver@latest
 
-      - name: 🔁 Auto install matching ChromeDriver
+      - name: Auto install matching ChromeDriver
         run: node -e "require('chromedriver').path"
 
-      - name: 🧪 Run Mocha Tests Headlessly
+      - name: Run Mocha Tests Headlessly
         run: |
           mkdir -p artifacts
           npx mocha tests/e2e_crud_flow.test.mjs \
@@ -35,7 +35,7 @@ jobs:
             --reporter-options reportDir=artifacts,reportFilename=mochawesome
 
 
-      - name: 📤 Upload Mochawesome Report
+      - name: Upload Mochawesome Report
         uses: actions/upload-artifact@v4
         with:
           name: mochawesome-report
