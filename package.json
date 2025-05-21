@@ -1,0 +1,34 @@
+{
+  "name": "selenium-training-2",
+  "version": "1.0.0",
+  "description": "",
+  "type": "module",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "mocha tests/**/*.test.mjs --reporter mochawesome --reporter-options reportDir=artifacts,reportFilename=index,quiet=true,overwrite=true,html=true,json=false"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bq-mayank-54/selenium-training-2.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bq-mayank-54/selenium-training-2/issues"
+  },
+  "homepage": "https://github.com/bq-mayank-54/selenium-training-2#readme",
+  "devDependencies": {
+    "chai": "^5.2.0",
+    "esbuild-register": "^3.6.0",
+    "mocha": "^11.4.0",
+    "mochawesome": "^7.1.3",
+    "selenium-webdriver": "^4.32.0"
+  },
+  "dependencies": {
+    "chromedriver": "^134.0.5"
+  }
+}

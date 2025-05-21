@@ -1,0 +1,10 @@
+{
+    "username": "testuser12345",
+    "email": "testuser12345@example.com",
+    "password": "TestPassword123!",
+    "articleTitle": "My Automation Article",
+    "articleDesc": "A short description",
+    "articleBody": "This article was created via Selenium automation.",
+    "articleTags": "automation,selenium,test"
+  }
+  
