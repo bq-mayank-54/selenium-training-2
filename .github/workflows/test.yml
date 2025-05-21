@@ -21,13 +21,11 @@ jobs:
       - name: 📦 Install Dependencies
         run: npm install
 
-      - name: 🔧 Install ChromeDriver Matching Chrome
-        run: |
-          npm install chromedriver@latest chromedriver-autoinstaller
+      - name: 🔧 Install chromedriver
+        run: npm install chromedriver@latest
 
-      - name: 🔁 Auto Match ChromeDriver to Chrome
-        run: |
-          node -e "require('chromedriver-autoinstaller').install();"
+      - name: 🔁 Auto install matching ChromeDriver
+        run: node -e "require('chromedriver').path"
 
       - name: 🧪 Run Mocha Tests Headlessly
         run: |
@@ -35,6 +33,7 @@ jobs:
           npx mocha tests/e2e_crud_flow.test.mjs \
             --reporter mochawesome \
             --reporter-options reportDir=artifacts,reportFilename=mochawesome
+
 
       - name: 📤 Upload Mochawesome Report
         uses: actions/upload-artifact@v4
